@@ -4,6 +4,8 @@ const Output = styled.div`
     color: #fff;
     font-family: 'Lato', sans-serif;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     margin-top: 30px;
@@ -12,7 +14,7 @@ const Output = styled.div`
 const Image = styled.img`
     display: block;
     width: 100%;
-    max-width: 140px;
+    max-width: 150px;
 `
 
 const Text = styled.p`

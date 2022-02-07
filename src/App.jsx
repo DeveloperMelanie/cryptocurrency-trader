@@ -3,11 +3,12 @@ import styled from '@emotion/styled'
 import Form from './components/Form'
 import Result from './components/Result'
 import Spinner from './components/Spinner'
+import { translateText } from './utils'
 
 import CryptoImage from './img/imagen-criptos.png'
 
 const Container = styled.div`
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
     width: 90%;
 
@@ -60,6 +61,10 @@ export default function App() {
 
                 const response = await fetch(url)
                 const result = await response.json()
+
+                const lastUpdate = result.DISPLAY[crypto][currency].LASTUPDATE
+                result.DISPLAY[crypto][currency].LASTUPDATE =
+                    await translateText(lastUpdate)
 
                 setResult(result.DISPLAY[crypto][currency])
                 setLoading(false)
